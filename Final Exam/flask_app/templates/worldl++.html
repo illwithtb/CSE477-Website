@@ -1,0 +1,63 @@
+{% extends 'shared/layout.html' %}
+
+{% block extracss %}
+<link rel="stylesheet"    href="{{ url_for('static', filename='worldl++/css/worldl++.css') }}">
+{% endblock %}
+
+{% block extrajs %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.4.2.min.js"></script>
+<script src="https://cdn.socket.io/3.1.1/socket.io.min.js"></script>
+<script src="{{ url_for('static', filename='worldl++/js/worldl++.js') }}" defer></script>
+{% endblock %}
+
+{% block maincontent %}
+<div class="container">
+    <p><a class="title2">Worldl++</a></p>
+    <hr></hr>
+    <!-- Worldl board -->
+    <div class="game_container">
+        <div class="word_row">
+            <div class="letter_box"><p></p></div>
+        </div>
+    </div>
+    <!-- virtual keyboard for game -->
+    <div class="keyboard">
+        <div class="keyboard_row">
+            <input type="button" class="key" id="q" onclick="keyPressed('q')" value="Q"></input>
+            <input type="button" class="key" id="w" onclick="keyPressed('w')" value="W"></input>
+            <input type="button" class="key" id="e" onclick="keyPressed('e')" value="E"></input>
+            <input type="button" class="key" id="r" onclick="keyPressed('r')" value="R"></input>
+            <input type="button" class="key" id="t" onclick="keyPressed('t')" value="T"></input>
+            <input type="button" class="key" id="y" onclick="keyPressed('y')" value="Y"></input>
+            <input type="button" class="key" id="u" onclick="keyPressed('u')" value="U"></input>
+            <input type="button" class="key" id="i" onclick="keyPressed('i')" value="I"></input>
+            <input type="button" class="key" id="o" onclick="keyPressed('o')" value="O"></input>
+            <input type="button" class="key" id="p" onclick="keyPressed('p')" value="P"></input>
+        </div>
+        <div class="keyboard_row">
+            <input type="button" class="key" id="a" onclick="keyPressed('a')" value="A"></input>
+            <input type="button" class="key" id="s" onclick="keyPressed('s')" value="S"></input>
+            <input type="button" class="key" id="d" onclick="keyPressed('d')" value="D"></input>
+            <input type="button" class="key" id="f" onclick="keyPressed('f')" value="F"></input>
+            <input type="button" class="key" id="g" onclick="keyPressed('g')" value="G"></input>
+            <input type="button" class="key" id="h" onclick="keyPressed('h')" value="H"></input>
+            <input type="button" class="key" id="j" onclick="keyPressed('j')" value="J"></input>
+            <input type="button" class="key" id="k" onclick="keyPressed('k')" value="K"></input>
+            <input type="button" class="key" id="l" onclick="keyPressed('l')" value="L"></input>
+        </div>
+        <div class="keyboard_row">
+            <input type="button" class="key" id="enter" onclick="keyPressed('enter')" value="ENTER"></input>
+            <input type="button" class="key" id="z" onclick="keyPressed('z')" value="Z"></input>
+            <input type="button" class="key" id="x" onclick="keyPressed('x')" value="X"></input>
+            <input type="button" class="key" id="c" onclick="keyPressed('c')" value="C"></input>
+            <input type="button" class="key" id="v" onclick="keyPressed('v')" value="V"></input>
+            <input type="button" class="key" id="b" onclick="keyPressed('b')" value="B"></input>
+            <input type="button" class="key" id="n" onclick="keyPressed('n')" value="N"></input>
+            <input type="button" class="key" id="m" onclick="keyPressed('m')" value="M"></input>
+            <input type="button" class="key" id="back" onclick="keyPressed('back')" value="BACK"></input>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+.header-photo{
+	padding: 0px;
+	margin: 0;
+	border: 0px;
+	height: 15vh;
+	
+	/*background image is a colorful rock foundation*/
+	background-image: url(../images/banner.jpg);
+	background-size:cover;
+}
+
+/* Gets rid of margin and padding around webpage*/
+body {
+	margin: 0;
+    padding: 0;
+}

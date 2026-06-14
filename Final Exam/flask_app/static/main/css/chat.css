@@ -1,0 +1,25 @@
+/* chatbox */
+#chat {
+    width: 50%;
+    height: 350px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+    overflow-y:auto;
+}
+
+/* leave chat button */
+#leave_btn {
+    margin: 5px;
+}
+
+/*message box*/
+#msg_box {
+    width:40%;
+    margin: 10px;
+    
+}

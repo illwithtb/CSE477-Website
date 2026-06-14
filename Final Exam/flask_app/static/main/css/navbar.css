@@ -1,0 +1,119 @@
+/* FLex contianer for navigation elments */
+nav .container{
+	background-color: rgb(64,21,54);
+	margin: 0;
+	height: 12vh;
+	width: 100%;
+	min-height: 25px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+nav .title {
+	color: #FFF;
+	float: left;
+	font-family: monospace;
+	font-size: 16px;
+	text-decoration: none;
+	padding: 0 2vw;
+	flex: 1;
+}
+
+nav .links{
+	align-content: center;
+	vertical-align: middle;
+}
+
+nav ul {
+	list-style-type: none; 
+	margin: 0;
+	padding:0;
+	text-align: center;
+	align-content: center;
+}
+
+nav li {
+	display: inline;
+}
+
+/* || links formatting */
+nav li a {
+	color: #FFF;
+	font-family: monospace;
+	font-size: 16px;
+	padding-right: 2vw;
+	text-decoration: none;
+}
+
+/* text opacity lowers when item is hovered over */
+nav li a:hover{
+	opacity: 0.5;
+}
+/* || */
+
+/* formats image in header */
+nav img {
+	height: 10vh;
+	width: auto;
+
+	max-width: 40px;
+	max-height: 40px;
+	min-height: 20px;
+
+	padding-right: 2vw;
+}
+
+/* || menu for mobile that is hidden for screens larger than 650px */
+#menu{
+	display: none;
+}
+
+#menu-control{
+	display:none;
+}
+
+.menu-mobile{
+	display: none;
+}
+/* || */
+
+/* adapts display for mobile devices */
+@media screen and (max-width: 650px){
+	.links{
+		display: none; /*hides original links*/
+	}
+
+	#linkedin-img{
+		display: none; /*hides linked in icon*/
+	}
+
+	/* menu icon */
+	#menu{
+		background-color: transparent;
+		display: initial;
+		padding-right: 2vw;
+		width: auto;
+		height: 5vh;
+	}
+
+	/*shows menu of links when mobile menu icon is pressed */
+	#menu-control:checked ~ .menu-mobile {
+		display: initial;
+		background-color: rgb(64,21,54);
+		display: flex;
+		flex-direction: row;
+		align-items: left;
+		overflow-y:auto;
+		margin: 0;
+		height: 25vh;
+		width: 100%;
+	}
+
+	#menu-control:checked ~ * li{
+		text-align: left;
+		display: list-item;
+		padding: 10px 10px;
+	}
+}
+

@@ -1,0 +1,95 @@
+<!-- FILL ME IN WITH CODE FOR YOUR PAGE LAYOUT -->
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homepage- Ileana Kueber</title>
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/header.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/navbar.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/main.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/footer.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='main/images/favicon.ico') }}">
+  {% block extracss %}{% endblock %}
+  <script src="{{ url_for('static', filename='main/js/main.js') }}" defer></script>
+  {% block extrajs %}{% endblock %}
+</head>
+
+<body>
+    <article>
+    <!-- The header  -->
+    <header>
+			<div class="header-photo"></div>
+		</header>
+
+    <!-- The navigation bar -->
+    <nav>
+			<input type="checkbox" id="menu-control"/>
+			<div class="container">
+				<a class="title">
+          {% if user == 'Unknown' %}  
+          <p>CSE 477 - Homework 3</p>
+          {% else %}
+          <p>Logged in as {{user}}</p>
+          {% endif %}
+        </a>
+				<div class="links">
+					<ul>
+						<li><a href="home">Home</a></li>
+						<li><a href="projects">Projects</a></li>
+						<li><a href="../static/main/files/Resume-kueber.pdf">Resume</a></li>
+            <li><a href="/chat">Chat</a></li>
+            {% if user == 'Unknown' %}  
+            <li><a href="/login">Login</a></li>
+            <li><a href="/signup">Sign-Up</a></li>
+            {% else %}
+            <li><a href="/logout">Logout</a></li>
+            {% endif %}   
+					</ul>
+				</div>
+				<a href="https://www.linkedin.com/in/ileana-kueber/">
+							<img src="../static/main/images/social-linkedin.png"
+							alt= "Linked-in icon"
+							id= "linkedin-img"
+							loading="lazy"></a>
+			<!-- menu icon -->
+			<label id="menu" for="menu-control">
+				<img src="../static/main/images/menu-bar.png" 
+					alt="Menu icon" 
+					loading="lazy">
+			</label>
+			</div>
+			<!-- menu avaliable when screen is less than 650 px-->
+			<div class="menu-mobile">
+				<ul>
+					<li><a href="home">Home</a></li>
+					<li><a href="projects">Projects</a></li>
+					<li><a href="../static/main/files/Resume-kueber.pdf">Resume</a></li>
+          <li><a href="/chat">Chat</a></li>
+          {% if user == 'Unknown' %}  
+          <li><a href="/login">Login</a></li>
+          <li><a href="/signup">Sign-Up</a></li>
+          {% else %}
+          <li><a href="/logout">Logout</a></li>
+          {% endif %}   
+					<li><a href="https://www.linkedin.com/in/ileana-kueber/">LinkedIn</a></li>
+				</ul>	
+			</div>
+		</nav>
+
+    <!-- The main content  -->
+    <main>
+      {% block maincontent %}{% endblock %}
+    </main>
+
+    <!-- The footer of the file -->
+    <footer>
+			<div class="box">
+				<p>© 2023 Ileana I. Kueber</p>
+			</div>
+		</footer>
+  
+</body>
+
+</html>
+

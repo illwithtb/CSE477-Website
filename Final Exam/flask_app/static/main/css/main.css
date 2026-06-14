@@ -1,0 +1,95 @@
+/* || containers for elements */
+/* container for all main elements */
+main .container{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* 2 column container for photo and description */
+main .desc-container{
+	/* 2 column grid */
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 2vw;
+
+	max-width: 80vw;
+	max-height: 50vh;
+	margin: 3vh 5vw;
+	padding: 2vh 5vw;
+	border: 2px dotted;
+
+	justify-content: space-evenly;
+	align-content: center;
+	align-items: center;
+}
+/* || */
+
+main .desc-container a img{
+	width: calc(80vw / 2); /* width is half of .desc-container */
+	height: 50vh;
+	object-fit: fill;
+}
+
+/* || Description containers */
+main .self-description{
+	width: calc(80vw / 2); /* width is half of .desc-container */
+	height: 50vh;
+	text-align: justify;
+	overflow-y: scroll;
+}
+
+main .proj-description{
+	width: calc(80vw / 2); /* width is half of .desc-container */
+	height: 50vh;
+	text-align: justify;
+	overflow-y: hidden;
+}
+
+main .short-desc{
+	padding: 2vh 2vw;
+	text-align: center;
+	align-items: center;
+}
+/* || */
+
+/* || Text formating */
+main p{
+	font-family: monospace;
+	font-size: 18px;	
+}
+
+main .title{
+	font-size: 30px;
+}
+
+main .title2{
+	font-size: 24px;
+
+}
+
+/* Changes display for mobile devices */
+@media screen and (max-width: 650px){
+	/* changes description container to 1 column and allows overflow*/
+	main .desc-container{
+		display: grid;
+		grid-template-columns: 1fr;
+		max-height: none;
+	}
+
+	main .desc-container a img{
+		width: 80vw;
+	}
+
+	main .self-description{
+		width: 80vw;
+		overflow-y: visible;
+		height: auto;
+	}
+
+	main .proj-description{
+		width: 80vw;
+		overflow-y: visible;
+		height: auto;
+	}
+}

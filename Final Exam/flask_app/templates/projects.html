@@ -1,0 +1,38 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+<div class="container">
+	<div class="short-desc">
+		<p><strong>Below is a list of projects I worked on in CSE477:</strong></p>
+		<p>Click an image, or hyperlink in the description, to learn more.</p>
+		<hr></hr>
+	</div>
+	<div class="desc-container">
+		<a href="piano">
+			<img src="../static/main/images/piano.jpeg" 
+				alt="Black grand piano" 
+				loading="lazy">
+		</a>
+		<div class="proj-description">
+			<p><a class="title"><strong>Javascript Piano</strong></a></p><p>As part of my first Homework assignment in CSE 477, I developed an interactive piano build in pure HTML, CSS and Javascript. This tool (in addition to my webpage) highlight my ability to build beautiful and mobile-friendly front-end applications.</p>
+			<a href="piano"><p>Click here to see and play!</p></a>
+		</div>
+	</div>
+	<div class="desc-container">
+		<a href="worldl++">
+			<img src="../static/worldl++/images/wordle-logo.png" 
+				alt="Black grand piano" 
+				loading="lazy">
+		</a>
+		<div class="proj-description">
+			<p><a class="title"><strong>Wordle</strong></a></p><p>As part of my final exam for CSE 477, 
+				I developed a version of Wordle that allows for a word of n-length and gives you n amount of tries to guess it</p>
+			<a href="worldl++"><p>Click here to see and play!</p></a>
+		</div>
+	</div>
+	<div class="short-desc">
+		<hr></hr>
+		<p><strong>More coming soon!</strong></p>
+	</div>
+</div>
+{% endblock %}

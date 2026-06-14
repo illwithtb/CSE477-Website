@@ -1,0 +1,32 @@
+{% extends 'shared/layout.html' %}
+
+{% block extracss %}
+<link rel="stylesheet"    href="{{ url_for('static', filename='worldl++/css/instructions.css') }}">
+{% endblock %}
+
+{% block extrajs %}
+<script type="text/javascript" src="//code.jquery.com/jquery-1.4.2.min.js"></script>
+<script src="https://cdn.socket.io/3.1.1/socket.io.min.js"></script>
+{% endblock %}
+
+{% block maincontent %}
+<div class="container">
+    <p><a class="title2">Worldl++</a></p>
+    <hr></hr>
+    <div class = "instruction-container">
+        <p><a class="title2">How to Play</a></p>
+        <hr></hr>
+        <ul>
+            <li><p>The amount of attempts you get is equal to the number of letters in the word</p></li>
+            <li><p>After each guess letters will change colors depending on the accuracy of the guess</p></li>
+            <ul>
+                <li><p><a class=green>Green</a>: letter is in the word and the correct spot</p></li>
+                <li><p><a class=yellow>Yellow</a>: letter is in the word but in the wrong spot</p></li>
+                <li><p><a class=grey>Grey</a>: letter is not in the word</p></li>
+            </ul>
+        </ul>
+        <input type="button" value="Go to game!" onclick='window.location.href = "/worldl++"''>
+    </div>
+    
+</div>
+{% endblock %}

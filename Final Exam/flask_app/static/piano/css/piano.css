@@ -1,0 +1,200 @@
+input{
+	visibility: hidden;
+}
+/* container for piano application */
+.piano-container{
+	position: stat;
+	display: block;
+	padding: 2vh 2vw;
+	width: 70vw;
+	height: 70vh;
+	background-color: #131937; /* dark blue */
+	border-radius: 25px;
+}
+
+.the-great-old-one{
+	/*same dimensions as piano-container*/
+	position: absolute;
+	width: 74vw;
+	height: 74vh;
+	left: 12vw;
+	top: 41vh;
+	padding: 0;
+	margin: 0;
+
+	display: block;
+	
+	/*image of the great old one */
+	background-image: url(../images/texture.jpeg);
+	background-size: cover;
+	background-position: center;
+	border-radius: 25px;
+
+	opacity: 0;
+	transition: opacity	5s;
+
+	/*Used to ignore mouseover for keys, found here:
+	https://stackoverflow.com/questions/45572602/ignore-objects-over-hover
+	*/
+	pointer-events: none;
+}
+
+/*box the same size as the space the black and white keys take */
+.piano{
+	/*flex row of white keys*/
+	display: block;
+
+	/*position at bottom of piano*/
+	position: absolute;
+	top: 67vh;
+	left: 19vw;
+
+	/*dimensions*/
+	height: 42vh;
+	width: 60vw;
+}
+
+/* title text above piano */
+.piano-text{
+	position: relative;
+	text-align: center;
+	bottom: -5vh;
+
+	pointer-events: none;
+}
+
+/* Container for white keys*/
+.piano-white-keys{
+	/*flex row*/
+	display: flex;
+	flex-direction: row;
+
+	/*position at bottom of piano*/
+	position: absolute;
+	top: 67vh;
+
+	height: 40vh;
+	width: 60vw;
+	padding: 0 5vw;
+}
+
+/* Container for black keys*/
+.piano-black-keys{
+	/*flex row*/
+	display: flex;
+	flex-direction: row;
+
+	/*position at bottom of piano*/
+	position: absolute;
+	top: 67vh;
+
+	gap: 1em;
+	height: 25vh;
+	width: 52.25vw;
+	left: 23vw;
+}
+
+/* container for text that appears over white keys */
+.piano-white-key-letters{
+	/*key letters are hidden until hovered over*/
+	opacity: 0;
+	transition: opacity	1s;
+
+	/*flex row */
+	display: flex;
+	flex-direction: row;
+
+	/*position at bottom of piano*/
+	position: absolute;
+	top: 102vh;
+
+	height: 5vh;
+	width: 60vw;
+	padding: 0 5vw;
+
+	text-align: center;
+}
+
+/* container for text that appears over black keys */
+.piano-black-key-letters{
+	/*key letters are hidden until hovered over*/
+	opacity: 0;
+	transition: opacity	1s;
+	
+	/*flex row*/
+	display: flex;
+	flex-direction: row;
+	gap: 1em;
+
+	/*position at bottom of piano*/
+	position: absolute;
+	top: 85vh;
+
+	height: 5vh;
+	width: 52.25vw;
+	left: 23vw;
+
+	text-align: center;
+}
+
+/*single white piano key*/
+.piano-key-white{
+	display: block;
+	background-color: #FAF6E9; /* off white color */
+	height: 100%;
+	width: 100%;
+	border: 3px solid;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+/*single black piano key*/
+.piano-key-black{
+	display: block;
+	background-color: #000; /* black */
+	height: 100%;
+	width: 100%;
+	border: 3px solid;
+	border-radius: 10px;
+}
+
+/* transparent black piano key for spacing*/
+.piano-key-transparent{
+	display: block;
+	background-color: transparent;
+	height: 100%;
+	width: 100%;
+}
+
+/* || formating for piano text */
+.piano-key-white-letter{
+	display: block;
+	background-color: transparent;
+	height: 100%;
+	width: 100%;
+}
+
+.piano-key-black-letter{
+	display: block;
+	background-color: transparent;
+	height: 100%;
+	width: 100%;
+}
+
+.piano-key-white-letter p{
+	font-size: 24px;
+	color: #000; /* black */
+}
+
+.piano-key-black-letter p{
+	font-size: 24px;
+	color: #FAF6E9; /* off white */
+}
+
+.piano-text p{
+	color: #FAF6E9; /* off white */
+	font-size: 36px;
+	font-family: "Trattatello";
+}
+
+/* || */
